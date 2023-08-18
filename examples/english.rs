@@ -1,5 +1,5 @@
-use better_num::english::u8::U8English;
+use better_num::english::u8::U8English::{TwoHundredFiftyFour, TwoHundredThirtyFour};
 
 fn main() {
-    dbg!(U8English::TwoHundredFiftyFour - U8English::TwoHundredThirtyFour);
+    dbg!(TwoHundredFiftyFour - TwoHundredThirtyFour);
 }
