@@ -2,8 +2,12 @@
 name = "better-num"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT"
+description = "Better numeric types in rust"
+repository = "https://github.com/adryzz/better-num"
+keywords = ["math", "type"]
+categories = ["mathematics", "rust-patterns", "no-std", "no-std::no-alloc"]
+readme = "README.md"
 
 [dependencies]
 
