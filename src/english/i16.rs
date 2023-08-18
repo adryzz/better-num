@@ -1,3 +1,159 @@
+use core::ops::{Add, Rem, Mul, Sub, Shl, Shr, Div, BitOr, BitAnd, BitXor, AddAssign, SubAssign, MulAssign, DivAssign, ShlAssign, ShrAssign, BitAndAssign, BitOrAssign, BitXorAssign, RemAssign};
+
+impl From<i16> for I16English {
+    fn from(value: i16) -> Self {
+        // SAFETY: the enum is exhaustive
+        unsafe {core::mem::transmute(value)}
+    }
+}
+
+impl Into<i16> for I16English {
+    fn into(self) -> i16 {
+		self as i16
+    }
+}
+
+impl Add for I16English {
+    type Output = Self;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        (self as i16 + rhs as i16).into()
+    }
+}
+
+impl Sub for I16English {
+    type Output = Self;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        (self as i16 - rhs as i16).into()
+    }
+}
+
+impl Mul for I16English {
+    type Output = Self;
+
+    fn mul(self, rhs: Self) -> Self::Output {
+        (self as i16 * rhs as i16).into()
+    }
+}
+
+impl Div for I16English {
+    type Output = Self;
+
+    fn div(self, rhs: Self) -> Self::Output {
+        (self as i16 / rhs as i16).into()
+    }
+}
+
+
+impl Shl for I16English {
+    type Output = Self;
+
+    fn shl(self, rhs: Self) -> Self::Output {
+        ((self as i16).shl(rhs as i16)).into()
+    }
+}
+
+impl Shr for I16English {
+    type Output = Self;
+
+    fn shr(self, rhs: Self) -> Self::Output {
+        ((self as i16).shr(rhs as i16)).into()
+    }
+}
+
+impl BitAnd for I16English {
+    type Output = Self;
+
+    fn bitand(self, rhs: Self) -> Self::Output {
+        ((self as i16).bitand(rhs as i16)).into()
+    }
+}
+
+impl BitOr for I16English {
+    type Output = Self;
+
+    fn bitor(self, rhs: Self) -> Self::Output {
+        ((self as i16).bitor(rhs as i16)).into()
+    }
+}
+
+impl BitXor for I16English {
+    type Output = Self;
+
+    fn bitxor(self, rhs: Self) -> Self::Output {
+        ((self as i16).bitxor(rhs as i16)).into()
+    }
+}
+
+impl Rem for I16English {
+    type Output = Self;
+
+    fn rem(self, rhs: Self) -> Self::Output {
+        ((self as i16).rem(rhs as i16)).into()
+    }
+}
+
+impl AddAssign for I16English {
+    fn add_assign(&mut self, rhs: Self) {
+		*self = self.add(rhs)
+	}
+}
+
+impl SubAssign for I16English {
+    fn sub_assign(&mut self, rhs: Self) {
+		*self = self.sub(rhs)
+	}
+}
+
+impl MulAssign for I16English {
+    fn mul_assign(&mut self, rhs: Self) {
+		*self = self.mul(rhs)
+	}
+}
+
+impl DivAssign for I16English {
+    fn div_assign(&mut self, rhs: Self) {
+		*self = self.div(rhs)
+	}
+}
+
+impl ShlAssign for I16English {
+    fn shl_assign(&mut self, rhs: Self) {
+		*self = self.shl(rhs)
+	}
+}
+
+impl ShrAssign for I16English {
+    fn shr_assign(&mut self, rhs: Self) {
+		*self = self.shr(rhs)
+	}
+}
+
+impl BitAndAssign for I16English {
+    fn bitand_assign(&mut self, rhs: Self) {
+		*self = self.bitand(rhs)
+	}
+}
+
+impl BitOrAssign for I16English {
+    fn bitor_assign(&mut self, rhs: Self) {
+		*self = self.bitor(rhs)
+	}
+}
+
+impl BitXorAssign for I16English {
+    fn bitxor_assign(&mut self, rhs: Self) {
+		*self = self.bitxor(rhs)
+	}
+}
+
+impl RemAssign for I16English {
+    fn rem_assign(&mut self, rhs: Self) {
+		*self = self.rem(rhs);
+	}
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 #[repr(i16)]
 pub enum I16English {

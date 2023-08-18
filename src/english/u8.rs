@@ -1,3 +1,159 @@
+use core::ops::{Add, Rem, Mul, Sub, Shl, Shr, Div, BitOr, BitAnd, BitXor, AddAssign, SubAssign, MulAssign, DivAssign, ShlAssign, ShrAssign, BitAndAssign, BitOrAssign, BitXorAssign, RemAssign};
+
+impl From<u8> for U8English {
+    fn from(value: u8) -> Self {
+        // SAFETY: the enum is exhaustive
+        unsafe {core::mem::transmute(value)}
+    }
+}
+
+impl Into<u8> for U8English {
+    fn into(self) -> u8 {
+		self as u8
+    }
+}
+
+impl Add for U8English {
+    type Output = Self;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        (self as u8 + rhs as u8).into()
+    }
+}
+
+impl Sub for U8English {
+    type Output = Self;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        (self as u8 - rhs as u8).into()
+    }
+}
+
+impl Mul for U8English {
+    type Output = Self;
+
+    fn mul(self, rhs: Self) -> Self::Output {
+        (self as u8 * rhs as u8).into()
+    }
+}
+
+impl Div for U8English {
+    type Output = Self;
+
+    fn div(self, rhs: Self) -> Self::Output {
+        (self as u8 / rhs as u8).into()
+    }
+}
+
+
+impl Shl for U8English {
+    type Output = Self;
+
+    fn shl(self, rhs: Self) -> Self::Output {
+        ((self as u8).shl(rhs as u8)).into()
+    }
+}
+
+impl Shr for U8English {
+    type Output = Self;
+
+    fn shr(self, rhs: Self) -> Self::Output {
+        ((self as u8).shr(rhs as u8)).into()
+    }
+}
+
+impl BitAnd for U8English {
+    type Output = Self;
+
+    fn bitand(self, rhs: Self) -> Self::Output {
+        ((self as u8).bitand(rhs as u8)).into()
+    }
+}
+
+impl BitOr for U8English {
+    type Output = Self;
+
+    fn bitor(self, rhs: Self) -> Self::Output {
+        ((self as u8).bitor(rhs as u8)).into()
+    }
+}
+
+impl BitXor for U8English {
+    type Output = Self;
+
+    fn bitxor(self, rhs: Self) -> Self::Output {
+        ((self as u8).bitxor(rhs as u8)).into()
+    }
+}
+
+impl Rem for U8English {
+    type Output = Self;
+
+    fn rem(self, rhs: Self) -> Self::Output {
+        ((self as u8).rem(rhs as u8)).into()
+    }
+}
+
+impl AddAssign for U8English {
+    fn add_assign(&mut self, rhs: Self) {
+		*self = self.add(rhs)
+	}
+}
+
+impl SubAssign for U8English {
+    fn sub_assign(&mut self, rhs: Self) {
+		*self = self.sub(rhs)
+	}
+}
+
+impl MulAssign for U8English {
+    fn mul_assign(&mut self, rhs: Self) {
+		*self = self.mul(rhs)
+	}
+}
+
+impl DivAssign for U8English {
+    fn div_assign(&mut self, rhs: Self) {
+		*self = self.div(rhs)
+	}
+}
+
+impl ShlAssign for U8English {
+    fn shl_assign(&mut self, rhs: Self) {
+		*self = self.shl(rhs)
+	}
+}
+
+impl ShrAssign for U8English {
+    fn shr_assign(&mut self, rhs: Self) {
+		*self = self.shr(rhs)
+	}
+}
+
+impl BitAndAssign for U8English {
+    fn bitand_assign(&mut self, rhs: Self) {
+		*self = self.bitand(rhs)
+	}
+}
+
+impl BitOrAssign for U8English {
+    fn bitor_assign(&mut self, rhs: Self) {
+		*self = self.bitor(rhs)
+	}
+}
+
+impl BitXorAssign for U8English {
+    fn bitxor_assign(&mut self, rhs: Self) {
+		*self = self.bitxor(rhs)
+	}
+}
+
+impl RemAssign for U8English {
+    fn rem_assign(&mut self, rhs: Self) {
+		*self = self.rem(rhs);
+	}
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 #[repr(u8)]
 pub enum U8English {

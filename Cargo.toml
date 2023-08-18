@@ -9,8 +9,12 @@ edition = "2021"
 
 
 [features]
+default = ["english", "u8"]
 u8 = []
 i8 = []
 u16 = []
 i16 = []
 english = []
+
+[[example]]
+name = "english"

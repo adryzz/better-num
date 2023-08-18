@@ -1,4 +1,4 @@
 #![no_std]
 
-#[cfg(english)]
+#[cfg(feature = "english")]
 pub mod english;
