@@ -256,4 +256,5 @@ pub enum U8English {
 	TwoHundredFiftyTwo = 252,
 	TwoHundredFiftyThree = 253,
 	TwoHundredFiftyFour = 254,
+	TwoHundredFiftyFive = 255,
 }

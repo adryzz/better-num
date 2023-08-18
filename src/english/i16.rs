@@ -65536,4 +65536,5 @@ pub enum I16English {
 	ThirtyTwoThousandSevenHundredSixtyFour = 32764,
 	ThirtyTwoThousandSevenHundredSixtyFive = 32765,
 	ThirtyTwoThousandSevenHundredSixtySix = 32766,
+	ThirtyTwoThousandSevenHundredSixtySeven = 32767,
 }
