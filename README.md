@@ -26,6 +26,7 @@ For example, if i want the `U16English` type, i have to select the features `eng
 ## Language support
 
 - [x] English
+- [x] Japanese
 - [ ] French
 - [ ] German
 - [ ] Italian

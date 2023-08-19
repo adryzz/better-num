@@ -19,6 +19,11 @@ i8 = []
 u16 = []
 i16 = []
 english = []
+japanese = []
 
 [[example]]
 name = "english"
+
+[[example]]
+name = "japanese"
+required-features = ["japanese", "u8"]
